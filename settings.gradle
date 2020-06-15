@@ -1,0 +1,3 @@
+rootProject.name='APP-Widgets'
+include ':app'
+include ':lib_widgets'
