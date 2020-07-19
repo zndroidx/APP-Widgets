@@ -39,7 +39,6 @@ import com.zndroid.widget.gesture.ZoomViewAttach;
  * A zoomable ImageView. See {@link ZoomViewAttach} for most of the details on how the zooming
  * is accomplished
  */
-@SuppressWarnings("unused")
 public class ZoomImageView extends AppCompatImageView {
 
     private ZoomViewAttach attacher;
