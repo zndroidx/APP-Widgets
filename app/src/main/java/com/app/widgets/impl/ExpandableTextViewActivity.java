@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.app.widgets.R;
-import com.zndroid.widget.ExpandableTextView;
+import com.zndroid.widget.expand.ExpandableTextView;
 
 public class ExpandableTextViewActivity extends AppCompatActivity {
 

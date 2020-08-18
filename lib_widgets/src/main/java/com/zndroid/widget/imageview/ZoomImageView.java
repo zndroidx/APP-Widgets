@@ -14,7 +14,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package com.zndroid.widget;
+package com.zndroid.widget.imageview;
 
 import android.content.Context;
 import android.graphics.Matrix;

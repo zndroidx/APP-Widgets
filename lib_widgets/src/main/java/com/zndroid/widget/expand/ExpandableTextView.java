@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.zndroid.widget;
+package com.zndroid.widget.expand;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -34,6 +34,8 @@ import android.view.animation.Transformation;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.zndroid.widget.R;
 
 
 public class ExpandableTextView extends LinearLayout implements View.OnClickListener {

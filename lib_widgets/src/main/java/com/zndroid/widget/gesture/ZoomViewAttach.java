@@ -31,10 +31,12 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.OverScroller;
 
+import com.zndroid.widget.imageview.ZoomImageView;
+
 /**
- * The component of {@link com.zndroid.widget.ZoomImageView} which does the work allowing for zooming, scaling, panning, etc.
+ * The component of {@link ZoomImageView} which does the work allowing for zooming, scaling, panning, etc.
  * It is made public in case you need to subclass something other than AppCompatImageView and still
- * gain the functionality that {@link com.zndroid.widget.ZoomImageView} offers
+ * gain the functionality that {@link ZoomImageView} offers
  */
 public class ZoomViewAttach implements View.OnTouchListener,
     View.OnLayoutChangeListener {
