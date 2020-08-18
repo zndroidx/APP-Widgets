@@ -1,5 +1,7 @@
 package com.zndroid.widget.auxiliary.beans;
 
+import android.os.Build;
+
 import androidx.annotation.Nullable;
 
 import java.util.List;
@@ -9,7 +11,7 @@ import java.util.Objects;
  * Created by lzy on 2020/8/17.
  * entity should extends this when use {@link com.zndroid.widget.expand.AnimatedExpandableListView}
  */
-public class BaseBean<T extends BaseBean> {
+public class BaseBean<T> {
     private boolean isChecked = false;
     private long id;
     private List<T> childList;
@@ -59,6 +61,13 @@ public class BaseBean<T extends BaseBean> {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            return Objects.hash(id);
+        }
+
+        int hash = 5;
+        hash = 67 * hash + (int)(this.id ^ (this.id >>> 32));
+
+        return hash;
     }
 }

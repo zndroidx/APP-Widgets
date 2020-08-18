@@ -19,6 +19,7 @@ public abstract class CommonCheckExpandableAdapter<G extends BaseBean<C>, C exte
     public void setSelectedList(List<C> selectedList) {
         this.selectedList.clear();
         this.selectedList = selectedList;
+        selectedChildrenList.clear();
         selectedChildrenList.addAll(this.selectedList);
 
         for (G g : groups) {

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.app.widgets.impl.ExpandableActivity;
 import com.app.widgets.impl.ExpandableTextViewActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,5 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void ExpandableTextView(View view) {
         jump(ExpandableTextViewActivity.class);
+    }
+
+    public void ExpandableListView(View view) {
+        jump(ExpandableActivity.class);
     }
 }
