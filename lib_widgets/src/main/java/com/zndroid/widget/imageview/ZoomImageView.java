@@ -26,14 +26,14 @@ import android.view.GestureDetector;
 
 import androidx.appcompat.widget.AppCompatImageView;
 
-import com.zndroid.widget.gesture.OnMatrixChangedListener;
-import com.zndroid.widget.gesture.OnOutsidePhotoTapListener;
-import com.zndroid.widget.gesture.OnPhotoTapListener;
-import com.zndroid.widget.gesture.OnScaleChangedListener;
-import com.zndroid.widget.gesture.OnSingleFlingListener;
-import com.zndroid.widget.gesture.OnViewDragListener;
-import com.zndroid.widget.gesture.OnViewTapListener;
-import com.zndroid.widget.gesture.ZoomViewAttach;
+import com.zndroid.widget.auxiliary.gesture.OnMatrixChangedListener;
+import com.zndroid.widget.auxiliary.gesture.OnOutsidePhotoTapListener;
+import com.zndroid.widget.auxiliary.gesture.OnPhotoTapListener;
+import com.zndroid.widget.auxiliary.gesture.OnScaleChangedListener;
+import com.zndroid.widget.auxiliary.gesture.OnSingleFlingListener;
+import com.zndroid.widget.auxiliary.gesture.OnViewDragListener;
+import com.zndroid.widget.auxiliary.gesture.OnViewTapListener;
+import com.zndroid.widget.auxiliary.gesture.ZoomViewAttach;
 
 /**
  * A zoomable ImageView. See {@link ZoomViewAttach} for most of the details on how the zooming

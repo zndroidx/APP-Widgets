@@ -1,4 +1,4 @@
-package com.zndroid.widget.gesture;
+package com.zndroid.widget.auxiliary.gesture;
 
 
 /**

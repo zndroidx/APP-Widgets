@@ -8,9 +8,7 @@ import com.app.widgets.R;
 import com.zndroid.widget.expand.ExpandableTextView;
 
 public class ExpandableTextViewActivity extends AppCompatActivity {
-
-    ExpandableTextView expandableTextView;
-
+    private ExpandableTextView expandableTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

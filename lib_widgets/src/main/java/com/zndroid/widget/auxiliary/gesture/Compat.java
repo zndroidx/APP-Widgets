@@ -13,7 +13,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package com.zndroid.widget.gesture;
+package com.zndroid.widget.auxiliary.gesture;
 
 import android.annotation.TargetApi;
 import android.os.Build.VERSION;
