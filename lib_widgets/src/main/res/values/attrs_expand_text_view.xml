@@ -6,5 +6,9 @@
         <attr name="animAlphaStart" format="float"/>
         <attr name="expandDrawable" format="reference"/>
         <attr name="collapseDrawable" format="reference"/>
+        <attr name="isImageMore" format="boolean"/>
+        <attr name="moreTextSize" format="dimension"/>
+        <attr name="moreTextColor" format="color"/>
+        <attr name="moreText" format="string"/>
     </declare-styleable>
 </resources>

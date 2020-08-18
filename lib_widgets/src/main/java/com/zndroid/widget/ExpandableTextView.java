@@ -49,13 +49,19 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
     /* The default alpha value when the animation starts */
     private static final float DEFAULT_ANIM_ALPHA_START = 0.7f;
 
+    /* The default boolean value of more style */
+    private static final boolean DEFAULT_SHOW_IMAGE = true;
+
     protected TextView mTv;
 
     protected ImageButton mButton; // Button to expand/collapse
+    protected TextView mMoreTv; // TextView to expand/collapse
 
     private boolean mRelayout;
 
     private boolean mCollapsed = true; // Show short version as default.
+
+    private boolean isImageMore = true; // show ImageButton as default.
 
     private int mCollapsedHeight;
 
@@ -202,18 +208,26 @@ public class ExpandableTextView extends LinearLayout implements View.OnClickList
 
     private void init(AttributeSet attrs) {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.ExpandableTextView);
+
+        isImageMore = typedArray.getBoolean(R.styleable.ExpandableTextView_isImageMore, DEFAULT_SHOW_IMAGE);
         mMaxCollapsedLines = typedArray.getInt(R.styleable.ExpandableTextView_maxCollapsedLines, MAX_COLLAPSED_LINES);
         mAnimationDuration = typedArray.getInt(R.styleable.ExpandableTextView_animDuration, DEFAULT_ANIM_DURATION);
         mAnimAlphaStart = typedArray.getFloat(R.styleable.ExpandableTextView_animAlphaStart, DEFAULT_ANIM_ALPHA_START);
         mExpandDrawable = typedArray.getDrawable(R.styleable.ExpandableTextView_expandDrawable);
         mCollapseDrawable = typedArray.getDrawable(R.styleable.ExpandableTextView_collapseDrawable);
 
-        if (mExpandDrawable == null) {
-            mExpandDrawable = getResources().getDrawable(R.drawable.ic_expand_small_holo_light);
+
+        if (isImageMore) {
+            if (mExpandDrawable == null) {
+                mExpandDrawable = getResources().getDrawable(R.drawable.ic_expand_small_holo_light);
+            }
+            if (mCollapseDrawable == null) {
+                mCollapseDrawable = getResources().getDrawable(R.drawable.ic_collapse_small_holo_light);
+            }
+        } else {
+
         }
-        if (mCollapseDrawable == null) {
-            mCollapseDrawable = getResources().getDrawable(R.drawable.ic_collapse_small_holo_light);
-        }
+
 
         typedArray.recycle();
     }
