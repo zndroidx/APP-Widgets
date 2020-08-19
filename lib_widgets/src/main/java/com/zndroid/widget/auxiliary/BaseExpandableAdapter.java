@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.LayoutRes;
 
-import com.zndroid.widget.auxiliary.beans.BaseBean;
+import com.zndroid.widget.auxiliary.beans.IExpandBean;
 import com.zndroid.widget.expand.AnimatedExpandableListView;
 
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Created by lzy on 2020/8/17.
  */
-public abstract class BaseExpandableAdapter<G extends BaseBean<C>, C extends BaseBean,
+public abstract class BaseExpandableAdapter<G extends IExpandBean<C>, C extends IExpandBean,
         VH_G extends BaseExpandableAdapter.ExpandableViewHolder,
         VH_C extends BaseExpandableAdapter.ExpandableViewHolder>
         extends AnimatedExpandableListView.AnimatedExpandableListAdapter {

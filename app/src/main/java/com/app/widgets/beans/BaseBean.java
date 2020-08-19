@@ -1,17 +1,16 @@
-package com.zndroid.widget.auxiliary.beans;
+package com.app.widgets.beans;
 
 import android.os.Build;
 
-import androidx.annotation.Nullable;
+import com.zndroid.widget.auxiliary.beans.IExpandBean;
 
 import java.util.List;
 import java.util.Objects;
 
 /**
  * Created by lzy on 2020/8/17.
- * entity should extends this when use {@link com.zndroid.widget.expand.AnimatedExpandableListView}
  */
-public class BaseBean<T> {
+public class BaseBean<T> implements IExpandBean<T> {
     private boolean isChecked = false;
     private long id;
     private List<T> childList;
@@ -53,10 +52,11 @@ public class BaseBean<T> {
     }
 
     @Override
-    public boolean equals(@Nullable Object obj) {
-        if (null == obj) return false;
-        if (!(obj instanceof BaseBean)) return false;
-        return this.id == ((BaseBean) obj).getId();
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        BaseBean<?> baseBean = (BaseBean<?>) object;
+        return id == baseBean.id;
     }
 
     @Override

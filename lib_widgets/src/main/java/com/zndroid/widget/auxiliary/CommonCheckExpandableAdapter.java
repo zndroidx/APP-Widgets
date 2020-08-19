@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.zndroid.widget.auxiliary.beans.BaseBean;
+import com.zndroid.widget.auxiliary.beans.IExpandBean;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Created by lzy on 2020/8/18.
  */
-public abstract class CommonCheckExpandableAdapter<G extends BaseBean<C>, C extends BaseBean, VH_G extends BaseExpandableAdapter.ExpandableViewHolder, VH_C extends BaseExpandableAdapter.ExpandableViewHolder> extends BaseExpandableAdapter<G, C, VH_G, VH_C> {
+public abstract class CommonCheckExpandableAdapter<G extends IExpandBean<C>, C extends IExpandBean, VH_G extends BaseExpandableAdapter.ExpandableViewHolder, VH_C extends BaseExpandableAdapter.ExpandableViewHolder> extends BaseExpandableAdapter<G, C, VH_G, VH_C> {
     private List<C> selectedList = new CopyOnWriteArrayList<>();
     private ItemSelectChangedListener<C> itemSelectChangedListener;
 
