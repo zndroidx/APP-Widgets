@@ -23,8 +23,8 @@ public abstract class BaseExpandableAdapter<G extends IExpandBean<C>, C extends 
         extends AnimatedExpandableListView.AnimatedExpandableListAdapter {
 
     private Context context;
-    protected List<G> groups;
-    protected List<C> selectedChildrenList;
+    protected List<G> groups = new CopyOnWriteArrayList<>();
+    protected List<C> selectedChildrenList = new CopyOnWriteArrayList<>();
 
     protected ItemClickListener itemClickListener;
 
@@ -37,10 +37,14 @@ public abstract class BaseExpandableAdapter<G extends IExpandBean<C>, C extends 
         notifyDataSetChanged();
     }
 
-    public BaseExpandableAdapter(Context context, List<G> groups) {
+    public BaseExpandableAdapter(Context context) {
         this.context = context;
-        this.groups = groups;
         this.selectedChildrenList = new CopyOnWriteArrayList<>();
+    }
+
+    public void setNewData(List<G> groups) {
+        this.groups = groups;
+        notifyDataSetChanged();
     }
 
     protected abstract VH_G getGroupViewHolder(View itemView, int type, ViewGroup parent);

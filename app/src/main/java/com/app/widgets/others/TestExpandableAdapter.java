@@ -15,8 +15,8 @@ import java.util.List;
  * Created by lzy on 2020/8/18.
  */
 public class TestExpandableAdapter extends CommonCheckExpandableAdapter<GroupBean, ChildBean, GroupVH, ChildVH> {
-    public TestExpandableAdapter(Context context, List<GroupBean> groups) {
-        super(context, groups);
+    public TestExpandableAdapter(Context context) {
+        super(context);
     }
 
     @Override
@@ -65,7 +65,8 @@ public class TestExpandableAdapter extends CommonCheckExpandableAdapter<GroupBea
         holder.getItemView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                itemClickListener.onItemClicked(groupPosition, childPosition);
+                if (null != itemClickListener)
+                    itemClickListener.onItemClicked(groupPosition, childPosition);
             }
         });
     }

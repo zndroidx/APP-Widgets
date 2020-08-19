@@ -32,7 +32,8 @@ public class ExpandableActivity extends AppCompatActivity {
 
         initData();
 
-        adapter = new TestExpandableAdapter(this, list);
+        adapter = new TestExpandableAdapter(this);
+        adapter.setNewData(list);
 
         ChildBean childBean21 = new ChildBean();
         childBean21.setId(21);

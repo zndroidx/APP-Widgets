@@ -61,8 +61,8 @@ public abstract class CommonCheckExpandableAdapter<G extends IExpandBean<C>, C e
         this.itemSelectChangedListener = itemSelectChangedListener;
     }
 
-    public CommonCheckExpandableAdapter(Context context, List<G> groups) {
-        super(context, groups);
+    public CommonCheckExpandableAdapter(Context context) {
+        super(context);
     }
 
     @Override
@@ -85,6 +85,7 @@ public abstract class CommonCheckExpandableAdapter<G extends IExpandBean<C>, C e
 
     @Override
     protected void onSelectChanged(List<C> childList) {
-        this.itemSelectChangedListener.onItemSelectChanged(childList);
+        if (null != itemSelectChangedListener)
+            this.itemSelectChangedListener.onItemSelectChanged(childList);
     }
 }
