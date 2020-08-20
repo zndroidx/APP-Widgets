@@ -47,6 +47,15 @@ public abstract class BaseExpandableAdapter<G extends IExpandBean<C>, C extends 
         notifyDataSetChanged();
     }
 
+    public List<C> getAllChildrenList() {
+        List<C> temp = new CopyOnWriteArrayList<>();
+        for (G g : groups) {
+            temp.addAll(g.getChildList());
+        }
+
+        return temp;
+    }
+
     protected abstract VH_G getGroupViewHolder(View itemView, int type, ViewGroup parent);
     protected abstract @LayoutRes int getBindGroupItemViewId();
     protected abstract void onBindGroupData(VH_G holder, G group, int groupPosition);
