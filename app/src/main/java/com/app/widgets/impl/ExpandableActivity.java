@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.app.widgets.R;
@@ -72,6 +73,46 @@ public class ExpandableActivity extends AppCompatActivity {
             }
         });
         expandableListView.setAdapter(adapter);
+
+
+//        linearLayout.setVisibility(showSearch() ? View.VISIBLE : View.GONE);
+//        relativeLayout.setVisibility(showSelectAll() ? View.VISIBLE : View.GONE);
+//
+//        adapter = getAdapter();
+//        expandableListView.setAdapter(adapter);
+//
+//        if (showSearch()) {
+//            searchEditText.setOnSearchClickListener(this);
+//            searchEditText.setSearchTextListener(this);
+//        }
+//
+//        if (showSelectAll()) {
+//            if (adapter.getSelectedChildrenList().size() != 0
+//                    && adapter.getAllChildrenList().size() == adapter.getSelectedChildrenList().size())
+//                checkBox.setChecked(true);
+//
+//            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//                @Override
+//                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                    if (showSelectAll() && buttonView.isPressed() && isChecked) {
+//                        adapter.setSelectedList(adapter.getAllChildrenList());
+//                    } else if (showSelectAll() && buttonView.isPressed() && !isChecked) {
+//                        adapter.unSelectAll();
+//                    }
+//                }
+//            });
+//        }
+//
+//        adapter.setItemSelectChangedListener(new CommonCheckExpandableAdapter.ItemSelectChangedListener() {
+//            @Override
+//            public void onItemSelectChanged(List list) {
+//                if (!XUtil.isEmpty(list) && !XUtil.isEmpty(adapter.getAllChildrenList())
+//                        && adapter.getAllChildrenList().size() == list.size())
+//                    checkBox.setChecked(true);
+//                else
+//                    checkBox.setChecked(false);
+//            }
+//        });
     }
 
     private void initData() {
